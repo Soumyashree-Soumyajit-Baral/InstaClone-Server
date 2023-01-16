@@ -1,3 +1,4 @@
+require("dotenv").config()
 const Express = require("express")
 const mongoose = require("mongoose")
 const cors = require("cors")
@@ -21,6 +22,7 @@ app.listen(process.env.PORT || 4000,(err)=>{
 // })
 mongoose.connect(`${DATABASE}`,()=>{
   console.log('connected to db');
+  console.log(DATABASE)
 },(err)=>{
   console.log(err);
 })
