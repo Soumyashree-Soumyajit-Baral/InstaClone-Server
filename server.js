@@ -25,7 +25,7 @@ mongoose.connect(`${DATABASE}`,()=>{
   console.log(err);
 })
 
- app.get("/",(req,res)=>{
+ app.get("/home",(req,res)=>{
     PostModel.find().then((posts)=>{
         res.status(200).json(posts)
     }).catch((err)=>{
@@ -33,7 +33,7 @@ mongoose.connect(`${DATABASE}`,()=>{
     })
  })
 
-app.post("/",(req,res)=>{
+app.post("/home",(req,res)=>{
     const date = new Date
     let finalDate = date + "" //converting object to str
     finalDate = finalDate.split(" ");//string to array
